@@ -4,17 +4,24 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import Header from './Header/Header';
+import Nav from './Nav/Nav';
+
 import Index from './Index/Index';
 import UserList from './UserList/UserList';
 
 const App = () => {
     return (
-        <Router>
-            <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/userlist" element={<UserList />} />
-            </Routes>
-        </Router>
+        <>
+            <Header />
+            <Router>
+                <Nav />
+                <Routes>
+                    <Route path="/" element={<Index />} />
+                    <Route path="/userlist" element={<UserList />} />
+                </Routes>
+            </Router>
+        </>
     );
 }
 
